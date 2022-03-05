@@ -10,4 +10,4 @@ services:
         target: /usr/src/app
       - type: bind
         source: ./test_pics
-        target: /usr/src/app/pics
+        target: /usr/src/pics
