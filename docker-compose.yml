@@ -1,0 +1,10 @@
+version: "3.7"
+services:
+  photo_server:
+    build: .
+    ports:
+      - "8080:5000"
+    volumes:
+      - type: bind
+        source: .
+        target: /usr/src/app
