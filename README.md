@@ -31,7 +31,7 @@ I'm thinking a flask app in a container, with a volume containing photos passed 
 
 ## How do I get the page to refresh on an interval?
 
-* Use AJAX / JS to reload the page?
+* Use AJAX / JS to reload the page? https://stackoverflow.com/questions/8470431/what-is-the-best-way-to-implement-a-forced-page-refresh-using-flask 
 
 
 

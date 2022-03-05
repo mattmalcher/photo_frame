@@ -6,5 +6,8 @@ services:
       - "8080:5000"
     volumes:
       - type: bind
-        source: .
+        source: ./app
         target: /usr/src/app
+      - type: bind
+        source: ./test_pics
+        target: /usr/src/app/pics
