@@ -29,7 +29,6 @@ def disk_img():
 def random_img():
 
     path, fname, date = img_db.get_random_path(db_loc=db_loc)
-
     enc_path = urllib.parse.quote(path)
 
     return render_template(
@@ -37,9 +36,12 @@ def random_img():
     )
 
 
-@app.route("/slideshow")
-def slideshow():
-    return render_template("slideshow.html")
+@app.route("/slideshow/<seconds>")
+def slideshow(seconds):
+    path, fname, date = img_db.get_random_path(db_loc=db_loc)
+    enc_path = urllib.parse.quote(path)
+
+    return render_template("slideshow.html", enc_path=enc_path, seconds=seconds)
 
 
 @app.route("/refresh_db")

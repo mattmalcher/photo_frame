@@ -1,5 +1,7 @@
-{% extends 'base.html' %}
-
 {% block content %}
-    <h1>{% block title %} Slideshow {% endblock %}</h1>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/slideshow.css') }}">
+    <img src="/disk_img?filename={{enc_path}}">
+
+    <meta http-equiv="refresh" content="{{seconds}}">  
+
 {% endblock %}
