@@ -60,3 +60,11 @@ sudo mount -t nfs 192.168.0.12:/mnt/NAS/Pictures /home/pi/mnt/plain
 ```
 192.168.0.12:/mnt/NAS/Pictures /home/pi/repos/photo_frame/test_pics nfs      defaults    0       0
 ```
+# TODO
+
+Next Steps:
+
+* Figure out why indexing is crashing with: `sqlite3.InterfaceError: Error binding parameter 2 - probably unsupported type.` when upserting image.
+
+* Turn off the debug mode
+
