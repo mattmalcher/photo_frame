@@ -1,5 +1,4 @@
 .vscode/*
 __pycache__/*
 *.pyc
-app/pics/photo_frame.db
-test_pics/photo_frame.db
+db/*

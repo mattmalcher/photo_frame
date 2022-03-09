@@ -4,7 +4,8 @@ import os
 import urllib.parse
 
 pic_pth = "../pics/"
-db_loc = os.path.join(pic_pth, "photo_frame.db")
+# db_loc = os.path.join(pic_pth, "photo_frame.db")
+db_loc = "../db/photo_frame.db"
 
 if not os.path.isfile(db_loc):
     img_db.init_db(db_loc)

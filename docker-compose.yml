@@ -11,3 +11,6 @@ services:
       - type: bind
         source: ./test_pics
         target: /usr/src/pics
+      - type: bind
+        source: ./db
+        target: /usr/src/db

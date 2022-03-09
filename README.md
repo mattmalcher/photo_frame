@@ -42,3 +42,21 @@ https://github.com/Digital-Signage-Slideshow/DS_Slideshow
 https://runnable.com/docker/python/dockerize-your-flask-application
 
 https://medium.com/swlh/flask-docker-the-basics-66a699aa1e7d
+
+
+# Samba Share
+This looked useful
+https://askubuntu.com/questions/157128/proper-fstab-entry-to-mount-a-samba-share-on-boot
+
+
+The hardest part is going to be figuring out how to mount a samba share with brackets & spaces in the name...
+
+# NFS...
+
+just works :)
+```
+sudo mount -t nfs 192.168.0.12:/mnt/NAS/Pictures /home/pi/mnt/plain
+```
+```
+192.168.0.12:/mnt/NAS/Pictures /home/pi/repos/photo_frame/test_pics nfs      defaults    0       0
+```
