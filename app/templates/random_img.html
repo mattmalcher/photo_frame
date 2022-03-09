@@ -2,4 +2,9 @@
 
 {% block content %}
     <h1>{% block title %} Random Image {% endblock %}</h1>
+    <p>{{path}}</p>
+    <img src="/disk_img?filename={{enc_path}}">
+
+    <meta http-equiv="refresh" content="1">   
+    
 {% endblock %}

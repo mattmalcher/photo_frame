@@ -59,10 +59,25 @@ def upsert_image(db_loc, img_path: str, fname: str, date: str):
 
     cur.execute(
         """INSERT INTO images(path, fname, date) VALUES(?,?,?)
-    ON CONFLICT(path) DO nothing;
-    """,
+        ON CONFLICT(path) DO nothing;
+        """,
         [img_path, fname, date],
     )
 
     con.commit()
     con.close()
+
+
+def get_random_path(db_loc):
+
+    con = sqlite3.connect(db_loc)
+    cur = con.cursor()
+
+    cur.execute("SELECT path, fname, date FROM images ORDER BY RANDOM() LIMIT 1")
+
+    con.commit()
+
+    res = cur.fetchone()
+    con.close()
+
+    return res

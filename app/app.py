@@ -1,6 +1,7 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, send_file, request
 from photo_frame import img_db
 import os
+import urllib.parse
 
 pic_pth = "../pics/"
 db_loc = os.path.join(pic_pth, "photo_frame.db")
@@ -17,9 +18,23 @@ def home():
     return render_template("index.html")
 
 
+@app.route("/disk_img/")
+def disk_img():
+    filename = request.args.get("filename")
+    print(filename)
+    return send_file(filename)
+
+
 @app.route("/random_image")
 def random_img():
-    return render_template("random_img.html")
+
+    path, fname, date = img_db.get_random_path(db_loc=db_loc)
+
+    enc_path = urllib.parse.quote(path)
+
+    return render_template(
+        "random_img.html", path=path, enc_path=enc_path, fname=fname, date=date
+    )
 
 
 @app.route("/slideshow")
