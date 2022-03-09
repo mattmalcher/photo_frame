@@ -29,10 +29,7 @@ def slideshow():
 
 @app.route("/refresh_db")
 def refresh():
-    images = img_db.find_images(pic_pth)
 
-    for img in images:
-        print(img)
-        print(img_db.get_date_taken(img))
+    img_db.find_images(pic_pth, db_loc=db_loc)
 
     return "Refreshing Image Database"
